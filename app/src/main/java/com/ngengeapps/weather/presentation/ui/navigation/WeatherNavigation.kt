@@ -9,20 +9,30 @@ import com.ngengeapps.weather.presentation.WeatherViewModel
 
 private const val detailsRoute = "details"
 private const val homeRoute = "home"
+private const val permissionsRoute = "permissions"
 
 @Composable
 fun WeatherNavigation(navController: NavHostController, sharedVm: WeatherViewModel) {
     SwipeDismissableNavHost(
-        navController = navController, startDestination = homeRoute
+        navController = navController, startDestination = permissionsRoute
     ) {
         composable(homeRoute) {
             CurrentConditionScreen(viewModel = sharedVm, onNavigateToDetails = { data ->
                 sharedVm.putCurrentSuccessResponse(data)
                 navController.navigate(detailsRoute)
+
             })
         }
         composable(detailsRoute) {
             WeatherDetailsScreen(sharedVm)
+        }
+
+        composable(permissionsRoute) {
+            LocationPermissionScreen(sharedVm) {
+                navController.navigate(homeRoute) {
+                    popUpTo(permissionsRoute) { inclusive = true }
+                }
+            }
         }
 
     }

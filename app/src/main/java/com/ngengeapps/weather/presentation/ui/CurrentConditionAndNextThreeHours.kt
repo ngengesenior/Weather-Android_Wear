@@ -34,7 +34,7 @@ fun CurrentConditionAndNextThreeHours(
     daily: DailyWeather,
     hourly: List<HourlyWeather>,
     timeZone: String,
-    city: String = "Oklahoma City"
+    city: String
 ) {
 
     ScalingLazyColumn(modifier = modifier) {

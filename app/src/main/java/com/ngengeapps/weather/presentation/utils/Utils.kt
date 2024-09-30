@@ -69,7 +69,7 @@ fun getUVText(uv: Double): String {
     }
 }
 
-fun anyPermissionGranted(context: Context, permissions: List<String>): Boolean {
+fun anyPermissionGranted(context: Context, permissions: Array<String>): Boolean {
     return permissions.any {
         ContextCompat.checkSelfPermission(context, it) == PackageManager.PERMISSION_GRANTED
     }
@@ -81,6 +81,13 @@ fun shouldShowRequestRationale(context: Context, permission: String): Boolean {
         context.shouldShowRequestPermissionRationale(permission)
     } else false
 
+}
+
+
+fun shouldShowRequestRationale(context: Context, permissions: Array<String>): Boolean {
+    return permissions.any {
+        shouldShowRequestRationale(context, it)
+    }
 }
 
 
