@@ -1,4 +1,9 @@
 package com.ngengeapps.weather.presentation.utils
+
+import android.content.Context
+import android.content.pm.PackageManager
+import androidx.activity.ComponentActivity
+import androidx.core.content.ContextCompat
 import kotlinx.datetime.Instant
 import kotlinx.datetime.LocalDateTime
 import kotlinx.datetime.TimeZone
@@ -8,6 +13,7 @@ import kotlinx.datetime.format.MonthNames
 import kotlinx.datetime.format.Padding
 import kotlinx.datetime.format.char
 import kotlinx.datetime.toLocalDateTime
+
 fun utcDateTimeToLocalDateTime(dt: Long, timeZoneId: String): LocalDateTime {
     val timeZone = TimeZone.of(timeZoneId)
     return Instant.fromEpochSeconds(dt).toLocalDateTime(timeZone)
@@ -62,3 +68,19 @@ fun getUVText(uv: Double): String {
         }
     }
 }
+
+fun anyPermissionGranted(context: Context, permissions: List<String>): Boolean {
+    return permissions.any {
+        ContextCompat.checkSelfPermission(context, it) == PackageManager.PERMISSION_GRANTED
+    }
+
+}
+
+fun shouldShowRequestRationale(context: Context, permission: String): Boolean {
+    return if (context is ComponentActivity) {
+        context.shouldShowRequestPermissionRationale(permission)
+    } else false
+
+}
+
+

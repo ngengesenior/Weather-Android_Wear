@@ -1,5 +1,3 @@
-import com.google.devtools.ksp.processing.kspJsArgParser
-
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)

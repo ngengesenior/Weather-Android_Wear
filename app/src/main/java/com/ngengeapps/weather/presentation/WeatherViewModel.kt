@@ -14,25 +14,32 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class WeatherViewModel @Inject constructor(private val weatherClient: WeatherAPIClient):ViewModel() {
-    private val _response: MutableStateFlow<Response<OneCallResponse>> = MutableStateFlow(Response<OneCallResponse>.Uninitialized())
+class WeatherViewModel @Inject constructor(private val weatherClient: WeatherAPIClient) :
+    ViewModel() {
+    private val _response: MutableStateFlow<Response<OneCallResponse>> =
+        MutableStateFlow(Response<OneCallResponse>.Uninitialized())
     val response = _response.asStateFlow()
         .stateIn(
             viewModelScope,
             SharingStarted.WhileSubscribed(5000),
             Response<OneCallResponse>.Uninitialized()
         )
+    private val _currentSuccessResponse = MutableStateFlow<OneCallResponse?>(null)
+    val currentSuccessResponse = _currentSuccessResponse.asStateFlow()
 
     init {
-        fetchWeather(latitude = 35.481918, longitude =-97.508469)
+        fetchWeather(latitude = 35.481918, longitude = -97.508469)
     }
 
-    fun fetchWeather(latitude: Double,longitude: Double) {
-        viewModelScope.launch{
-            val weatherResponse = weatherClient.getWeatherResponse(latitude,longitude)
+    fun fetchWeather(latitude: Double, longitude: Double) {
+        viewModelScope.launch {
+            val weatherResponse = weatherClient.getWeatherResponse(latitude, longitude)
             _response.value = weatherResponse
         }
     }
 
+    fun putCurrentSuccessResponse(response: OneCallResponse) {
+        _currentSuccessResponse.value = response
+    }
 
 }
