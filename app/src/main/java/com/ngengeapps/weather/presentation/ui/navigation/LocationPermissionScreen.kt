@@ -20,7 +20,7 @@ fun LocationPermissionScreen(
             onNavigate()
         }, onPermissionDenied = {
             Toast.makeText(context, "Location permission denied", Toast.LENGTH_LONG).show()
-            
+
         })
     }
 }
