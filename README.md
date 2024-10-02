@@ -17,6 +17,8 @@ purchasing a Pixel watch 2. In summary, the app does the following
 - Jetpack Compose for UI and navigation
 - [Kamel](https://github.com/Kamel-Media/Kamel) for Image loading
 - [Open Weather API](https://openweathermap.org/api) for weather data. Enter your own key
+  for [Ope Call 3](https://openweathermap.org/price) . I have deactivated the key in the git history
+  by the way.
   in [WeatherAPIClient.kt](/app/src/main/java/com/ngengeapps/weather/presentation/api/WeatherAPIClient.kt)
 - [Ktor](https://ktor.io/) for API calls
 - [Kotlinx Serialization](https://github.com/Kotlin/kotlinx.serialization) for JSON parsing

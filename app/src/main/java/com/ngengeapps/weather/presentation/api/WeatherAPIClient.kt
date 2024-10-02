@@ -16,9 +16,9 @@ import javax.inject.Inject
 class WeatherAPIClient @Inject constructor(private val geocodeService: AndroidGeocodingService) {
 
     companion object {
-        const val OPEN_WEATHER_KEY = ""  // Insert your key here
+        const val OPEN_WEATHER_KEY = "b9964bb67d54c3dd19a1deaecc6d9171"
         const val BASE_URL =
-            "https://api.openweathermap.org/data/3.0/onecall?appid=$OPEN_WEATHER_KEY&units=imperial"
+            "https://api.openweathermap.org/data/3.0/onecall?appid=${OPEN_WEATHER_KEY}&units=imperial"
     }
 
     private val client = HttpClient() {
