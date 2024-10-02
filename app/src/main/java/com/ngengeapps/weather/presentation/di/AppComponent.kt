@@ -1,4 +1,4 @@
-package com.ngengeapps.weather.presentation.data
+package com.ngengeapps.weather.presentation.di
 
 import dagger.Component
 import javax.inject.Singleton

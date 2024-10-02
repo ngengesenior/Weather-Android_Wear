@@ -7,22 +7,23 @@ import androidx.compose.ui.Modifier
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.wear.compose.material.Scaffold
 import androidx.wear.compose.material.TimeText
-import com.ngengeapps.weather.presentation.WeatherViewModel
 import com.ngengeapps.weather.presentation.data.OneCallResponse
+import com.ngengeapps.weather.presentation.data.WeatherViewModel
 import com.ngengeapps.weather.presentation.ui.WeatherUI
 
 
 @Composable
 fun WeatherDetailsScreen(viewModel: WeatherViewModel) {
     val response by viewModel.currentSuccessResponse.collectAsStateWithLifecycle()
+    val locality by viewModel.locality.collectAsStateWithLifecycle()
     Scaffold(timeText = { TimeText() }) {
         response?.let {
-            WeatherDetailsScreen(it)
+            WeatherDetailsScreen(it, locality = locality ?: "Your location")
         }
     }
 }
 
 @Composable
-fun WeatherDetailsScreen(response: OneCallResponse) {
-    WeatherUI(response = response, modifier = Modifier.fillMaxSize())
+fun WeatherDetailsScreen(response: OneCallResponse, locality: String) {
+    WeatherUI(response = response, modifier = Modifier.fillMaxSize(), city = locality)
 }

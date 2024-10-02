@@ -9,9 +9,9 @@ import androidx.compose.ui.text.withStyle
 import androidx.wear.compose.foundation.lazy.ScalingLazyListScope
 import androidx.wear.compose.material3.ListHeader
 import androidx.wear.compose.material3.MaterialTheme
-import androidx.wear.compose.material3.Text
 import com.ngengeapps.weather.presentation.data.DailyWeather
 import com.ngengeapps.weather.presentation.ui.common.ConditionRow
+import com.ngengeapps.weather.presentation.ui.common.TitleText
 import com.ngengeapps.weather.presentation.utils.formatToDayString
 import com.ngengeapps.weather.presentation.utils.utcDateTimeToLocalDateTime
 import kotlin.math.roundToInt
@@ -43,7 +43,7 @@ fun DailyConditionRow(dailyWeather: DailyWeather, timeZone: String) {
 fun ScalingLazyListScope.dailyConditionColumn(dailyWeather: List<DailyWeather>, timeZone: String) {
     item {
         ListHeader {
-            Text("Next 7 days")
+            TitleText(text = "Next 7 days")
         }
     }
     items(dailyWeather.size) { index ->

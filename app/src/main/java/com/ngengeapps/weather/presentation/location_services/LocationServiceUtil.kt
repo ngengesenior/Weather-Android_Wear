@@ -1,4 +1,4 @@
-package com.ngengeapps.weather.presentation.location
+package com.ngengeapps.weather.presentation.location_services
 
 import android.annotation.SuppressLint
 import com.google.android.gms.location.FusedLocationProviderClient

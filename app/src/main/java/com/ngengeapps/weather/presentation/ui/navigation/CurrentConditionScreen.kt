@@ -8,9 +8,9 @@ import androidx.compose.ui.Modifier
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.wear.compose.material.CircularProgressIndicator
 import androidx.wear.compose.material.Scaffold
-import com.ngengeapps.weather.presentation.WeatherViewModel
 import com.ngengeapps.weather.presentation.data.OneCallResponse
 import com.ngengeapps.weather.presentation.data.Response
+import com.ngengeapps.weather.presentation.data.WeatherViewModel
 import com.ngengeapps.weather.presentation.ui.CurrentConditionAndNextThreeHours
 
 @Composable

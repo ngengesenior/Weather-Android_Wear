@@ -1,11 +1,12 @@
-package com.ngengeapps.weather.presentation.data
+package com.ngengeapps.weather.presentation.di
 
 import android.content.Context
 import android.location.Geocoder
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
-import com.ngengeapps.weather.presentation.AndroidGeocodingService
-import com.ngengeapps.weather.presentation.location.LocationServiceUtil
+import com.ngengeapps.weather.presentation.api.WeatherAPIClient
+import com.ngengeapps.weather.presentation.location_services.AndroidGeocodingService
+import com.ngengeapps.weather.presentation.location_services.LocationServiceUtil
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

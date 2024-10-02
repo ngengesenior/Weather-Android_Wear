@@ -6,9 +6,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.wear.compose.foundation.lazy.ScalingLazyListScope
 import androidx.wear.compose.material3.ListHeader
-import androidx.wear.compose.material3.Text
 import com.ngengeapps.weather.presentation.data.HourlyWeather
 import com.ngengeapps.weather.presentation.ui.common.ConditionRow
+import com.ngengeapps.weather.presentation.ui.common.TitleText
 import com.ngengeapps.weather.presentation.utils.formatToAmPm
 import com.ngengeapps.weather.presentation.utils.utcDateTimeToLocalDateTime
 import kotlin.math.roundToInt
@@ -32,7 +32,7 @@ fun ScalingLazyListScope.hourConditionColumn(
 ) {
     item {
         ListHeader {
-            Text("Next 8 hours")
+            TitleText(text = "Next 8 hours")
         }
     }
 

@@ -1,11 +1,10 @@
-package com.ngengeapps.weather.presentation
+package com.ngengeapps.weather.presentation.data
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.ngengeapps.weather.presentation.data.OneCallResponse
-import com.ngengeapps.weather.presentation.data.Response
-import com.ngengeapps.weather.presentation.data.WeatherAPIClient
-import com.ngengeapps.weather.presentation.location.LocationServiceUtil
+import com.ngengeapps.weather.presentation.api.WeatherAPIClient
+import com.ngengeapps.weather.presentation.location_services.AndroidGeocodingService
+import com.ngengeapps.weather.presentation.location_services.LocationServiceUtil
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.MutableStateFlow

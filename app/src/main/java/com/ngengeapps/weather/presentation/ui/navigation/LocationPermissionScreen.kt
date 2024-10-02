@@ -5,11 +5,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 import androidx.wear.compose.material.Scaffold
 import androidx.wear.compose.material.TimeText
-import com.ngengeapps.weather.presentation.WeatherViewModel
+import com.ngengeapps.weather.presentation.data.WeatherViewModel
 import com.ngengeapps.weather.presentation.ui.LocationPermissionUI
 
 @Composable
-fun LocationPermissionScreen(sharedVm: WeatherViewModel, onNavigate: () -> Unit) {
+fun LocationPermissionScreen(
+    sharedVm: WeatherViewModel,
+    onNavigate: () -> Unit
+) {
     val context = LocalContext.current
     Scaffold(timeText = { TimeText() }) {
         LocationPermissionUI(onPermissionGranted = { usePreciseLocation ->
@@ -17,6 +20,7 @@ fun LocationPermissionScreen(sharedVm: WeatherViewModel, onNavigate: () -> Unit)
             onNavigate()
         }, onPermissionDenied = {
             Toast.makeText(context, "Location permission denied", Toast.LENGTH_LONG).show()
+            
         })
     }
 }

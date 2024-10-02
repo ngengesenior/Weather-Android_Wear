@@ -11,6 +11,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.wear.compose.navigation.rememberSwipeDismissableNavController
+import com.ngengeapps.weather.presentation.data.WeatherViewModel
 import com.ngengeapps.weather.presentation.theme.WeatherTheme
 import com.ngengeapps.weather.presentation.ui.navigation.WeatherNavigation
 import dagger.hilt.android.AndroidEntryPoint

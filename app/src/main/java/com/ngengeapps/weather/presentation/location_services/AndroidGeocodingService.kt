@@ -1,4 +1,4 @@
-package com.ngengeapps.weather.presentation
+package com.ngengeapps.weather.presentation.location_services
 
 import android.location.Geocoder
 import android.os.Build

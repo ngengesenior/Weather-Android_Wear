@@ -1,7 +1,9 @@
-package com.ngengeapps.weather.presentation.data
+package com.ngengeapps.weather.presentation.api
 
-import android.content.Context
-import com.ngengeapps.weather.presentation.AndroidGeocodingService
+import com.ngengeapps.weather.presentation.data.OneCallResponse
+import com.ngengeapps.weather.presentation.data.Place
+import com.ngengeapps.weather.presentation.data.Response
+import com.ngengeapps.weather.presentation.location_services.AndroidGeocodingService
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
@@ -50,7 +52,6 @@ class WeatherAPIClient @Inject constructor(private val geocodeService: AndroidGe
 
     suspend fun getWeatherResponse(
         placeName: String,
-        context: Context
     ): Response<Pair<OneCallResponse, Place?>> {
         var result: Response<Pair<OneCallResponse, Place?>> = Response.Loading()
         try {

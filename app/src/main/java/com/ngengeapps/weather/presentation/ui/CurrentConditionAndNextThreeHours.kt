@@ -13,7 +13,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -23,6 +22,7 @@ import androidx.wear.compose.material3.Text
 import com.ngengeapps.weather.presentation.data.CurrentWeather
 import com.ngengeapps.weather.presentation.data.DailyWeather
 import com.ngengeapps.weather.presentation.data.HourlyWeather
+import com.ngengeapps.weather.presentation.ui.common.TitleText
 import com.ngengeapps.weather.presentation.utils.formatToAmPm
 import com.ngengeapps.weather.presentation.utils.utcDateTimeToLocalDateTime
 import kotlin.math.roundToInt
@@ -39,7 +39,7 @@ fun CurrentConditionAndNextThreeHours(
 
     ScalingLazyColumn(modifier = modifier) {
         item {
-            Text(city, modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center)
+            TitleText(text = city)
             Spacer(Modifier.height(10.dp))
         }
 
