@@ -8,6 +8,7 @@ import androidx.compose.ui.Modifier
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.wear.compose.material.CircularProgressIndicator
 import androidx.wear.compose.material.Scaffold
+import androidx.wear.compose.material.TimeText
 import com.ngengeapps.weather.presentation.data.OneCallResponse
 import com.ngengeapps.weather.presentation.data.Response
 import com.ngengeapps.weather.presentation.data.WeatherViewModel
@@ -21,7 +22,8 @@ fun CurrentConditionScreen(
 ) {
     val response: Response<OneCallResponse> by viewModel.response.collectAsStateWithLifecycle()
     val currentLocality by viewModel.locality.collectAsStateWithLifecycle()
-    Scaffold(modifier = modifier) {
+    Scaffold(modifier = modifier,
+        timeText = { TimeText() }) {
         when (response) {
             is Response.Success<OneCallResponse> -> {
                 CurrentConditionAndNextThreeHours(

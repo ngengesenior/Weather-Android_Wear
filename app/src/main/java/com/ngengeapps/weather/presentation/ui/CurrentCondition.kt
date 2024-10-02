@@ -16,11 +16,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.wear.compose.material3.Icon
-import androidx.wear.compose.material3.MaterialTheme
 import androidx.wear.compose.material3.Text
 import com.ngengeapps.weather.presentation.data.OneCallResponse
+import com.ngengeapps.weather.presentation.ui.common.TitleText
 import kotlin.math.roundToInt
 
 @Composable
@@ -63,16 +62,12 @@ fun CurrentCondition(
 
             }
             Spacer(Modifier.height(8.dp))
-            Text(
-                "Current UV Index",
-                textAlign = TextAlign.Center,
-                modifier = Modifier.fillMaxWidth(),
-                fontSize = 14.sp
+            TitleText(
+                text = "Current UV Index"
             )
             Spacer(Modifier.height(2.dp))
             Text(
                 "UV ${apiResponse.current.uvi.roundToInt()}",
-                style = MaterialTheme.typography.titleSmall.copy(color = MaterialTheme.colorScheme.primary),
                 textAlign = TextAlign.Center,
                 modifier = Modifier.fillMaxWidth(),
 

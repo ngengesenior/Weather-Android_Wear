@@ -12,8 +12,8 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import androidx.wear.compose.foundation.lazy.ScalingLazyColumn
 import androidx.wear.compose.material.ListHeader
-import androidx.wear.compose.material3.Text
 import com.ngengeapps.weather.presentation.data.OneCallResponse
+import com.ngengeapps.weather.presentation.ui.common.TitleText
 import com.ngengeapps.weather.presentation.utils.iconUrlFromCode
 import io.kamel.image.KamelImage
 import io.kamel.image.asyncPainterResource
@@ -43,7 +43,7 @@ fun WeatherUI(
     ) {
         item {
             ListHeader {
-                Text(city)
+                TitleText(text = city)
             }
         }
         item {
